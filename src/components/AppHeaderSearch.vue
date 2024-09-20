@@ -1,15 +1,17 @@
 <script>
 
+import { store } from "../store.js";
+
 export default {
     data() {
         return {
-            inputField: ''
+            store
         }
     },
     methods: {
         searchedInput() {
-            console.log(this.inputField)
-            this.$emit('searchMovies')
+            console.log(store.inputField);
+            this.$emit('searchMovies');
         }
     }
 
@@ -18,7 +20,7 @@ export default {
 
 <template>
     <div class="input-group mb-3 w-50">
-        <input type="text" class="form-control" placeholder="search for a movie.." v-model="inputField">
+        <input type="text" class="form-control" placeholder="search for a movie.." v-model="store.inputField">
         <button class="btn btn-outline-secondary" type="button" @click="searchedInput">Search</button>
     </div>
 </template>

@@ -1,17 +1,18 @@
 <script>
 import AppHeaderSearch from './AppHeaderSearch.vue';
+import { store } from '../store';
 
 
 
 export default {
     data() {
         return {
-
+            store
         }
     },
     methods: {
         getMovies() {
-            console.log("L'evento è arrivato al componente parent")
+            console.log(store.inputField)
         }
     },
     components: {
