@@ -1,19 +1,35 @@
 <script>
 import AppHeaderSearch from './AppHeaderSearch.vue';
 import { store } from '../store';
+import axios from 'axios';
 
 
 
 export default {
     data() {
         return {
-            store
+            store,
+            apiURL: 'https://api.themoviedb.org/3/search/movie?api_key=967fcf2183704fd17a1c1d259d98665a&'
         }
     },
     methods: {
         getMovies() {
+            //Chiamata API
+            axios.get(this.apiURL, {
+                params: {
+                    query: store.inputField
+                }
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
             console.log(store.inputField)
-        }
+        },
+
+
     },
     components: {
         AppHeaderSearch
