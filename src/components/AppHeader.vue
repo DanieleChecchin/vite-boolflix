@@ -9,6 +9,11 @@ export default {
 
         }
     },
+    methods: {
+        getMovies() {
+            console.log("L'evento è arrivato al componente parent")
+        }
+    },
     components: {
         AppHeaderSearch
     }
@@ -17,7 +22,7 @@ export default {
 
 <template>
     <h1>AppHeader</h1>
-    <AppHeaderSearch />
+    <AppHeaderSearch @search-movies="getMovies" />
 </template>
 
 <style lang="scss" scoped></style>
