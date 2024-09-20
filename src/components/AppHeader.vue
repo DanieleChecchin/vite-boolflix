@@ -20,16 +20,14 @@ export default {
                     query: store.inputField
                 }
             })
-                .then(function (response) {
-                    console.log(response);
+                .then((response) => {
+                    console.log(response.data.results);
+                    store.filmList = response.data.results;
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
-            console.log(store.inputField)
         },
-
-
     },
     components: {
         AppHeaderSearch
@@ -38,7 +36,6 @@ export default {
 </script>
 
 <template>
-    <h1>AppHeader</h1>
     <AppHeaderSearch @search-movies="getMovies" />
 </template>
 
