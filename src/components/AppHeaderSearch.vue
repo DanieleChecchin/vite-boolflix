@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-    <div class="input-group mb-3 w-50">
+    <div class="input-group mb-3 w-25">
         <input type="text" class="form-control" placeholder="search for a movie.." v-model="store.inputField">
         <button class="btn btn-outline-secondary" type="button" @click="searchedInput">Cerca</button>
     </div>

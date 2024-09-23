@@ -1,5 +1,7 @@
 <script>
 import { store } from '../store';
+import AppMainMovies from './AppMainMovies.vue';
+import AppMainSeries from './AppMainSeries.vue';
 
 export default {
     data() {
@@ -7,9 +9,13 @@ export default {
             store
         }
     },
+    components: {
+        AppMainMovies,
+        AppMainSeries
+    },
     methods: {
         getFlagImage(lang) {
-            if (['de', 'en', 'es', 'fr', 'it', 'ja', 'pt'].includes(lang)) {
+            if (['de', 'en', 'es', 'fr', 'it', 'ja', 'pt', 'zh'].includes(lang)) {
                 return `/src/assets/${lang}.png`
             } else {
                 return '/src/assets/unknown.png'
