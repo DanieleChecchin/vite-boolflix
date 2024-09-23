@@ -11,7 +11,8 @@ export default {
     methods: {
         searchedInput() {
             console.log(store.inputField);
-            this.$emit('searchMovies');
+            this.$emit('searchMovies&Series');
+
         }
     }
 
@@ -21,7 +22,7 @@ export default {
 <template>
     <div class="input-group mb-3 w-50">
         <input type="text" class="form-control" placeholder="search for a movie.." v-model="store.inputField">
-        <button class="btn btn-outline-secondary" type="button" @click="searchedInput">Search</button>
+        <button class="btn btn-outline-secondary" type="button" @click="searchedInput">Cerca</button>
     </div>
 </template>
 
