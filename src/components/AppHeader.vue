@@ -18,28 +18,28 @@ export default {
 
 
         getMovies() {
-            //Chiamata API
+            //Chiamata API Film
             axios.get(this.apiFilmURL, {
                 params: {
                     query: store.inputField
                 }
             })
                 .then((response) => {
-                    console.log(response.data.results);
+                    console.log(response.data);
                     store.filmList = response.data.results;
                 });
         },
         getSeries() {
             console.log("series1");
 
-            //Chiamata API
+            //Chiamata API Serie
             axios.get(this.apiSeriesURL, {
                 params: {
                     query: store.inputField
                 }
             })
                 .then((response) => {
-                    console.log(response.data.results);
+                    console.log(response.data);
                     store.seriesList = response.data.results;
                 });
         },

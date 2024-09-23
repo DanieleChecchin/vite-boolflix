@@ -15,6 +15,9 @@ export default {
                 return '/src/assets/unknown.png'
             }
 
+        },
+        getImage(path) {
+            return `https://image.tmdb.org/t/p/w342/${path}`
         }
     }
 }
@@ -22,7 +25,8 @@ export default {
 
 <template>
 
-    <li v-for="film in store.filmList">
+    <li v-for="film in store.filmList"> <!--film.poster_path-->
+        <img :src="getImage(film.poster_path)" alt="cover-image">
         <span>Titolo del film:</span> {{ film.title }} <br>
         <span>Titolo originiale del film:</span> {{ film.original_title }} <br>
         <span>Lingua originale:</span> <img :src="getFlagImage(film.original_language)" alt="flag"><br>
