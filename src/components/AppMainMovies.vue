@@ -19,8 +19,14 @@ export default {
         getImage(path) {
             return `https://image.tmdb.org/t/p/w200/${path}`;
         },
-        ratingSar(vote) {
+        ratingStar(vote) {
             return Math.ceil(`${vote}` / 2);
+        },
+
+    },
+    computed: {
+        currentStars() {
+            return this.ratingStar;
         }
     }
 }
@@ -33,9 +39,15 @@ export default {
         <span>Titolo del film:</span> {{ film.title }} <br>
         <span>Titolo originiale del film:</span> {{ film.original_title }} <br>
         <span>Lingua originale:</span> <img :src="getFlagImage(film.original_language)" alt="flag"><br>
-        <span>Voto:</span> {{ ratingSar(film.vote_average) }}
+        <span>Voto:</span> {{ ratingStar(film.vote_average) }}
     </li>
+
+    <!--<i class="fa-solid fa-star"></i>-->
 
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+i {
+    color: darkgoldenrod;
+}
+</style>
