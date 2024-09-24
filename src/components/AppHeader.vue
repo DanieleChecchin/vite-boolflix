@@ -30,7 +30,6 @@ export default {
                 });
         },
         getSeries() {
-            console.log("series1");
 
             //Chiamata API Serie
             axios.get(this.apiSeriesURL, {

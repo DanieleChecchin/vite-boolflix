@@ -10,14 +10,17 @@ export default {
     methods: {
         getFlagImage(lang) {
             if (['de', 'en', 'es', 'fr', 'it', 'ja', 'pt', 'zh'].includes(lang)) {
-                return `/src/assets/${lang}.png`
+                return `/src/assets/${lang}.png`;
             } else {
-                return '/src/assets/unknown.png'
+                return '/src/assets/unknown.png';
             }
 
         },
         getImage(path) {
-            return `https://image.tmdb.org/t/p/w200/${path}`
+            return `https://image.tmdb.org/t/p/w200/${path}`;
+        },
+        ratingSar(vote) {
+            return Math.ceil(`${vote}` / 2);
         }
     }
 }
@@ -25,12 +28,12 @@ export default {
 
 <template>
 
-    <li v-for="film in store.filmList"> <!--film.poster_path-->
+    <li v-for="film in store.filmList">
         <img :src="getImage(film.poster_path)" alt="cover-image">
         <span>Titolo del film:</span> {{ film.title }} <br>
         <span>Titolo originiale del film:</span> {{ film.original_title }} <br>
         <span>Lingua originale:</span> <img :src="getFlagImage(film.original_language)" alt="flag"><br>
-        <span>Voto:</span> {{ film.vote_average }}
+        <span>Voto:</span> {{ ratingSar(film.vote_average) }}
     </li>
 
 </template>
