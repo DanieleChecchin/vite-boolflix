@@ -1,7 +1,6 @@
 <script>
 import { store } from '../store';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
 
 export default {
     data() {
@@ -37,13 +36,14 @@ export default {
         <span>Titolo del film:</span> {{ film.title }} <br>
         <span>Titolo originiale del film:</span> {{ film.original_title }} <br>
         <span>Lingua originale:</span> <img :src="getFlagImage(film.original_language)" alt="flag"><br>
-        <span>Voto:</span> <i class="fa-solid fa-star" v-for="n in ratingStar(film.vote_average) "></i>
+        <span>Voto:</span>
+        <font-awesome-icon :icon="['fas', 'star']" class="star" v-for="n in ratingStar(film.vote_average) " />
     </li>
 
 </template>
 
 <style scoped lang="scss">
-i {
+.star {
     color: darkgoldenrod;
 }
 </style>
