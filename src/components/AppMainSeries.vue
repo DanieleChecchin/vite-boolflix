@@ -18,6 +18,9 @@ export default {
         },
         getImage(path) {
             return `https://image.tmdb.org/t/p/w200/${path}`
+        },
+        ratingStar(vote) {
+            return Math.ceil(`${vote}` / 2);
         }
     }
 }
@@ -31,9 +34,13 @@ export default {
         <span>Titolo della serie:</span> {{ series.name }} <br>
         <span>Titolo originiale della serie:</span> {{ series.original_name }} <br>
         <span>Lingua originale:</span> <img :src="getFlagImage(series.original_language)" alt="flag"><br>
-        <span>Voto:</span> {{ series.vote_average }}
+        <font-awesome-icon :icon="['fas', 'star']" class="star" v-for="n in ratingStar(series.vote_average) " />
     </li>
 
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.star {
+    color: darkgoldenrod;
+}
+</style>

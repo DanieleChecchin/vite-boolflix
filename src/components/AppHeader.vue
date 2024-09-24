@@ -56,8 +56,10 @@ export default {
 </script>
 
 <template>
-    <!-- <AppHeaderSearch @search-series="getValues" @search-movies="getMovies" />-->
-    <AppHeaderSearch @searchMovies&Series="getsearchMovAndSer" />
+    <div class="header bg-black d-flex justify-content-between align-items-center px-3 mb-5">
+        <h1 class="text-danger">BOOLFLIX</h1>
+        <AppHeaderSearch @searchMovies&Series="getsearchMovAndSer" />
+    </div>
 </template>
 
 <style lang="scss" scoped></style>

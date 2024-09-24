@@ -12,7 +12,6 @@ export default {
         searchedInput() {
             console.log(store.inputField);
             this.$emit('searchMovies&Series');
-
         }
     }
 
@@ -20,9 +19,9 @@ export default {
 </script>
 
 <template>
-    <div class="input-group mb-3 w-25">
+    <div class="input-group h-25 w-25 align-self-center">
         <input type="text" class="form-control" placeholder="search for a movie.." v-model="store.inputField">
-        <button class="btn btn-outline-secondary" type="button" @click="searchedInput">Cerca</button>
+        <button class="btn btn-outline-secondary" type="button" @click="searchedInput">Search</button>
     </div>
 </template>
 

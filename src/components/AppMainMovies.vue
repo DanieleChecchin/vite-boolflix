@@ -22,8 +22,7 @@ export default {
         },
         ratingStar(vote) {
             return Math.ceil(`${vote}` / 2);
-        },
-
+        }
     }
 
 }

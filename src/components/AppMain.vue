@@ -19,12 +19,10 @@ export default {
 
 <template>
     <!--FILM-->
-    <h1 class="mb-3"> <span>Film trovati per: </span> {{ store.inputField.toUpperCase() }}</h1>
     <ul>
         <AppMainMovies />
     </ul>
     <!--SERIE TV-->
-    <h1 class="mb-3"> <span>Serie TV trovate per: </span> {{ store.inputField.toUpperCase() }}</h1>
     <ul>
         <AppMainSeries />
     </ul>
