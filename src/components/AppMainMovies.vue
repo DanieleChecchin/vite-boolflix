@@ -1,5 +1,7 @@
 <script>
 import { store } from '../store';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default {
     data() {
@@ -23,12 +25,8 @@ export default {
             return Math.ceil(`${vote}` / 2);
         },
 
-    },
-    computed: {
-        currentStars() {
-            return this.ratingStar;
-        }
     }
+
 }
 </script>
 
@@ -39,10 +37,8 @@ export default {
         <span>Titolo del film:</span> {{ film.title }} <br>
         <span>Titolo originiale del film:</span> {{ film.original_title }} <br>
         <span>Lingua originale:</span> <img :src="getFlagImage(film.original_language)" alt="flag"><br>
-        <span>Voto:</span> {{ ratingStar(film.vote_average) }}
+        <span>Voto:</span> <i class="fa-solid fa-star" v-for="n in ratingStar(film.vote_average) "></i>
     </li>
-
-    <!--<i class="fa-solid fa-star"></i>-->
 
 </template>
 
